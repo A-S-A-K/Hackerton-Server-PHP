@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors',1);
+//error_reporting(E_ALL);
+//ini_set('display_errors',1);
 
 
 
@@ -32,9 +32,14 @@ for($i=0; $i<2148; $i++){
     }
 }
 
-$output = json_encode($data_json,JSON_UNESCAPED_UNICODE);
-echo urldecode($output);
 
+if($data_json[1]==null){
+    echo "safe";
+}
+else {
+    $output = json_encode($data_json, JSON_UNESCAPED_UNICODE);
+    echo urldecode($output);
+}
 //}
 
 
